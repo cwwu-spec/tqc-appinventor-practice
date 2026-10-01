@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TQC App Inventor 2 基礎程式語法練習</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <h1>TQC App Inventor 2</h1>
+        <p>基礎程式語法 01-70 題練習</p>
+      </div>
+      <button id="homeBtn" class="ghost hidden" type="button">回首頁</button>
+    </header>
+
+    <section id="startScreen" class="card start-card">
+      <h2>選擇練習範圍</h2>
+      <p class="hint">每組 35 題。全部作答完成後才公布成績，接著會自動進入錯題訂正。</p>
+      <div class="set-grid">
+        <button class="set-btn" data-start="1" data-end="35">
+          <span class="set-title">第一組</span>
+          <span>第 1–35 題</span>
+        </button>
+        <button class="set-btn" data-start="36" data-end="70">
+          <span class="set-title">第二組</span>
+          <span>第 36–70 題</span>
+        </button>
+      </div>
+      <div class="rules">
+        <strong>練習方式</strong>
+        <p>第一次先完成全部 35 題，不會立即顯示答案。交卷後顯示正確率，再將答錯題目重新作答；仍答錯的題目會再次出現，直到全部訂正完成。</p>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="hidden">
+      <div class="status-row">
+        <div>
+          <span id="phaseBadge" class="badge">第一次作答</span>
+          <strong id="questionCounter"></strong>
+        </div>
+        <div class="progress-wrap"><div id="progressBar" class="progress"></div></div>
+      </div>
+
+      <article class="card question-card">
+        <div class="question-meta">
+          <h2 id="questionTitle"></h2>
+          <span id="multiHint" class="multi-hint"></span>
+        </div>
+        <div class="image-wrap">
+          <img id="questionImage" alt="題目圖片" />
+        </div>
+        <div id="answerArea" class="answer-grid" aria-label="作答選項"></div>
+        <p id="feedback" class="feedback hidden"></p>
+        <button id="nextBtn" class="primary" type="button">下一題</button>
+      </article>
+    </section>
+
+    <section id="resultScreen" class="card hidden result-card">
+      <div id="resultIcon" class="result-icon">📊</div>
+      <h2 id="resultTitle">第一次作答完成</h2>
+      <div id="scoreBlock"></div>
+      <div id="wrongList" class="wrong-list"></div>
+      <button id="correctionBtn" class="primary hidden" type="button">開始錯題訂正</button>
+      <button id="restartBtn" class="secondary hidden" type="button">重新練習這一組</button>
+      <button id="chooseBtn" class="ghost" type="button">選擇另一組</button>
+    </section>
+  </main>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
